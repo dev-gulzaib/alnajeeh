@@ -251,6 +251,7 @@ hr.style-one {
   cursor: pointer;
 }
 
+
 .preloader {
   position: fixed;
   top: 0;
@@ -259,11 +260,13 @@ hr.style-one {
   height: 100%;
   z-index: 9999;
   background-color: #fff;
-  /* background-image: url(../images/resources/preloader.gif); */
-  background-image: url(../img/AMS-logo-preloader.gif);
+
+  background-image: url(../img/AMS-LOGO-25.png);
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: contain; /* 👈 ensures full image is visible without stretching */
 }
+
 
 .scroll-to-top {
   display: inline-block;
