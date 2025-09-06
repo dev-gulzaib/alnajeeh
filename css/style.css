@@ -106,7 +106,7 @@ a:visited {
 }
 
 .thm-gray-bg {
-  background-color: #F5BCD8;
+  background-color: #351F76;
   /* background-color: #f6fbff; */
 }
 
@@ -141,7 +141,7 @@ hr.style-one {
   outline: none;
   text-align: center;
   border-radius: 27.5px;
-  background-color: #960A6E;
+  background-color: #351F76;
   /* background-color: #ff6b35; */
   font-size: 18px;
   color: #fff;
@@ -154,7 +154,7 @@ hr.style-one {
 }
 .thm-btn:hover {
   color: #fff;
-  background-color: #F5BCD8;
+  /* background-color: #F5BCD8; */
   /* background-color: #0384ce; */
 }
 
@@ -259,7 +259,8 @@ hr.style-one {
   height: 100%;
   z-index: 9999;
   background-color: #fff;
-  background-image: url(../images/resources/preloader.gif);
+  /* background-image: url(../images/resources/preloader.gif); */
+  background-image: url(../img/AMS-logo-preloader.gif);
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -268,7 +269,8 @@ hr.style-one {
   display: inline-block;
   width: 45px;
   height: 45px;
-  background: #0384ce;
+  background: #351F76;
+  /* background: #0384ce; */
   position: fixed;
   bottom: 40px;
   right: 40px;
@@ -284,7 +286,8 @@ hr.style-one {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: #0384ce;
+  background-color: #351F76;
+  /* background-color: #0384ce; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -396,7 +399,8 @@ hr.style-one {
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
-  background-color: #F5BCD8;
+  /* background-color: #F5BCD8; */
+  background-color: #351F76;
   /* background-color: rgba(0, 0, 0, 0.1); */
   margin-right: 20px;
 }
@@ -411,7 +415,8 @@ hr.style-one {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 16px;
-  background-color: #0384ce;
+  /* background-color: #0384ce; */
+  background-color: #351F76;
   padding: 22px 35.5px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -1431,7 +1436,8 @@ hr.style-one {
 .appointment-one__switch:focus {
   border-color: #0384ce;
   color: #fff;
-  background-color: #0384ce;
+  /* background-color: #0384ce; */
+  background-color: #351F76;
 }
 .appointment-one__switch:last-child {
   border: 1px solid #cacaca;
@@ -1443,8 +1449,8 @@ hr.style-one {
 .appointment-one__btn {
   margin-bottom: 25px;
   width: 100%;
-  -webkit-box-shadow: 0px 3px 15px 0px rgba(255, 68, 0, 0.4);
-  box-shadow: 0px 3px 15px 0px rgba(255, 68, 0, 0.4);
+  /* -webkit-box-shadow: 0px 3px 15px 0px rgba(255, 68, 0, 0.4);
+  box-shadow: 0px 3px 15px 0px rgba(255, 68, 0, 0.4); */
 }
 .appointment-one
   .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
@@ -1883,7 +1889,7 @@ hr.style-one {
 .about-one__features-item:before {
   content: "\e900";
   font-family: "clainc-icon";
-  color: #0384ce;
+  color: #351F76;
   font-size: 11px;
   position: absolute;
   top: 50%;
@@ -2830,7 +2836,8 @@ hr.style-one {
   max-width: 55.66%;
 }
 .feature-one__content-block {
-  background-color: #0384ce;
+  background-color: #351F76;
+  /* background-color: #0384ce; */
   padding-left: 80px;
   padding-top: 160px;
   padding-bottom: 86px;
@@ -2859,7 +2866,8 @@ hr.style-one {
   content: "";
   width: 75px;
   height: 100%;
-  background-color: #0384ce;
+  background-color: #960A6E;
+  /* background-color: #0384ce; */
   position: absolute;
   top: 0;
   left: -75px;
@@ -2900,7 +2908,8 @@ hr.style-one {
 }
 .feature-one__icon i {
   font-size: 31px;
-  color: #0384ce;
+  color: #351F76;
+  /* color: #0384ce; */
 }
 .feature-one__content {
   display: -webkit-box;
@@ -2928,7 +2937,8 @@ hr.style-one {
   transition: all 0.4s ease;
 }
 .feature-one__title a:hover {
-  color: #ff6b35;
+  color: #960A6E;
+  /* color: #ff6b35; */
 }
 .feature-one__text {
   margin: 0;
@@ -2946,7 +2956,8 @@ hr.style-one {
   content: "";
   width: 75px;
   height: 30px;
-  background-color: #006ead;
+  background-color: #960A6E;
+  /* background-color: #006ead; */
   position: absolute;
   left: -75px;
 }
@@ -3054,7 +3065,8 @@ hr.style-one {
   content: "";
   width: 100%;
   height: 2px;
-  background-color: #ff6b35;
+  background-color: #960A6E;
+  /* background-color: #ff6b35; */
   position: absolute;
   top: 100%;
   left: 0;
@@ -3076,7 +3088,8 @@ hr.style-one {
 }
 .feature-two .nav-tabs .nav-item.show .nav-link,
 .feature-two .nav-tabs .nav-link.active {
-  color: #ff6b35;
+  color: #960A6E;
+  /* color: #ff6b35; */
 }
 .feature-two__btn {
   margin-top: 60px;
@@ -5073,7 +5086,7 @@ hr.style-one {
 * 12. footer style
 */
 .footer-one {
-  background-color: #3156a3;
+  background-color: #351F76;
   /* background-color: #3156a3; */
 }
 
@@ -5267,7 +5280,8 @@ hr.style-one {
 }
 
 .footer-one__bottom {
-  background-color: #264380;
+  background-color: #351F76;
+  /* background-color: #264380; */
   padding: 16.5px 0;
 }
 .footer-one__bottom .container {
