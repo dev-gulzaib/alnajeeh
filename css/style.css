@@ -3988,7 +3988,8 @@ hr.style-one {
 .testimonials-three__qoute {
   width: 27px;
   height: 27px;
-  background-color: #0384ce;
+  background-color: #351F76;
+  /* background-color: #0384ce; */
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
