@@ -251,7 +251,18 @@ hr.style-one {
   cursor: pointer;
 }
 
-
+/* .preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #fff;
+  background-image: url(../img/AMS-LOGO-25.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+} */
 .preloader {
   position: fixed;
   top: 0;
@@ -260,7 +271,6 @@ hr.style-one {
   height: 100%;
   z-index: 9999;
   background-color: #fff;
-
   background-image: url(../img/AMS-LOGO-25.png);
   background-repeat: no-repeat;
   background-position: center center;
