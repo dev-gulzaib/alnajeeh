@@ -106,7 +106,7 @@ a:visited {
 }
 
 .thm-gray-bg {
-  background-color: #351F76;
+  background-color: #F5BCD8;
   /* background-color: #f6fbff; */
 }
 
@@ -342,6 +342,7 @@ hr.style-one {
 }
 .scroll-to-top:hover i {
   color: #0f4469;
+  /* color: #0f4469; */
 }
 .scroll-to-top:hover:before,
 .scroll-to-top:hover:after {
