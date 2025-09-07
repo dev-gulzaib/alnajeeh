@@ -5593,7 +5593,8 @@ hr.style-one {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  color: #5f666d;
+  color: #351F76;
+  /* color: #5f666d; */
   font-size: 15px;
   border: 1px solid #dbdbdb;
   line-height: 34px;
@@ -5603,8 +5604,10 @@ hr.style-one {
 }
 .contact-one__info__social a:hover {
   color: #fff;
-  border-color: #ff6b35;
-  background-color: #ff6b35;
+  border-color: #351F76;
+  background-color: #351F76;
+  /* border-color: #ff6b35;
+  background-color: #ff6b35; */
 }
 .contact-one__info__social a + a {
   margin-left: 10px;
