@@ -8,6 +8,7 @@
 
     .header-navigation {
         margin-bottom: 0;
+        position: relative;
     }
 
     .logo-box {
@@ -64,6 +65,12 @@
     }
 
     .navbar-expand-lg .navbar-collapse.showen {
+        display: block !important;
+        height: auto;
+        max-height: 70vh;
+    }
+
+    .header-navigation .main-navigation.showen {
         display: block !important;
         height: auto;
         max-height: 70vh;
@@ -239,7 +246,19 @@
 
     .header-navigation ul.navigation-box>li>a {
         display: block;
-        padding: 13px 30px;
+        padding: 15px 30px;
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .header-navigation ul.navigation-box>li>a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #F5BCD8;
+    }
+    
+    .header-navigation ul.navigation-box>li:last-child>a {
+        border-bottom: none;
     }
 
     .header-navigation ul.navigation-box>li>a:after {
@@ -255,9 +274,16 @@
         width: 100%;
         display: none;
         text-align: left;
-        background: #181818;
+        background: #351F76;
         max-height: 70vh;
-        overflow-y: scroll;
+        overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .header-navigation .container .menu-toggler {
@@ -275,7 +301,16 @@
     .header-navigation .container .menu-toggler {
         float: left;
         margin: 23px 0;
-        color: #111111;
+        color: #351F76;
+        border: 1px solid #351F76;
+        padding: 8px 10px;
+        border-radius: 4px;
+        background-color: transparent;
+    }
+    
+    .header-navigation .container .menu-toggler:hover {
+        background-color: #351F76;
+        color: #fff;
     }
 
 
