@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact Us - Alnajeeh</title>
+    <title>Packages - Alnajeeh</title>
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
@@ -25,6 +25,8 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
 </head>
 
 <body>
@@ -64,8 +66,8 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="main-navigation">
                         <ul class=" navigation-box">
-                            <li class="current">
-                                <a href="#">Home</a>
+                            <li>
+                                <a href="index.html">Home</a>
 
                             </li>
 
@@ -76,9 +78,9 @@
                             <li>
                                 <a href="success-stories.html">Success Stories</a>
                             </li>
-                            <li>
+                            <li class="current">
 
-                                <a href="packages.html">Packages</a>
+                                <a href="#">Packages</a>
                             </li>
 
                             <li><a href="contact.html">Contact Us</a></li>
@@ -89,62 +91,84 @@
                 <!-- /.container -->
             </nav>
         </header><!-- /.header-one -->
-        <section class="inner-banner" style="background-image: url(images/bg-slider/slider-3.jpeg);">
+        <section class="inner-banner" style="background-image: url(img/home-slider/Home-Page.jpg)">
             <div class="container">
-                <h2 class="inner-banner__title">Contact Us</h2>
+                <h2 class="inner-banner__title">Packages</h2>
                 <ul class="thm-breadcrumb">
                     <li><a href="index.html">Home</a></li>
                     <li><span class="sep">/</span></li>
-                    <li><span class="page-title">Contact Us</span></li>
+                    <li><span class="page-title">Packages</span></li>
                 </ul><!-- /.thm-breadcrumb -->
             </div><!-- /.container -->
         </section><!-- /.inner-banner -->
-        <section class="contact-one">
-            <div class="container">
-                <div class="row justify-content-between no-gutters">
-                    <div class="col-lg-5">
-                        <h3 class="contact-one__title">Get in Touch</h3><!-- /.contact-one__title -->
-                        <form action="inc/sendemail.php" class="contact-one__form contact-form-validated">
-                            <input type="text" name="name" placeholder="Full Name">
-                            <input type="text" name="email" placeholder="Email Address">
-                            <textarea placeholder="Your Messege" name="message"></textarea>
-                            <button type="submit" class="thm-btn contact-one__btn">Send</button>
-                        </form><!-- /.contact-one__form -->
-                    </div><!-- /.col-lg-5 -->
-                    <div class="col-lg-4">
-                        <div class="contact-one__info">
-                            <div class="contact-one__icon">
-                                <i class="clainc-icon-information-button"></i>
-                            </div><!-- /.contact-one__icon -->
-                            <h3 class="contact-one__info__title">Contact Detail</h3><!-- /.contact-one__info__title -->
-                            <p class="contact-one__info__text">Office # 32, Street Tadamun Al Arabi <br> Jeddah, Kingdom
-                                of Saudi Arabia.
-                            </p><!-- /.contact-one__info__text -->
-                            <p class="contact-one__info__text"><span>Call us:</span> <br> +966 57 862 6934 </p>
-                            <p class="contact-one__info__text"><span>WhatsApp:</span> <br> +92 336 0045 132 </p>
-                            <!-- /.contact-one__info__text -->
-                            <p class="contact-one__info__text"><span>Mail us:</span> <br> ams@alnaajeh.com <br>
-                                query@alnaajeh.com</p>
-                            <!-- /.contact-one__info__text -->
-                            <div class="contact-one__info__social">
-                                <a href="#"><i class="fa fa-facebook-f"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            </div><!-- /.contact-one__info__social -->
-                        </div><!-- /.contact-one__info -->
-                    </div><!-- /.col-lg-4 -->
-                </div><!-- /.row justify-content-end -->
-            </div><!-- /.container -->
-        </section><!-- /.contact-one -->
-        <div class="contact-page-map-wrapper">
-            <div class="google-map" id="contact-google-map" data-map-lat="21.489407" data-map-lng="39.246949"
-                data-icon-path="images/resources/map-pin-1-1.png" data-map-title="Jeddah, Saudi Arabia"
-                data-map-zoom="15" data-markers='{
-            "marker-1": [21.489407, 39.246949, "<h4>Jeddah Office</h4><p>Office # 32, Street Tadamun Al Arabi, Jeddah, KSA</p>"]
-        }'>
+
+        <section style="background-color: #ffffff;">
+            <div style="font-family: Arial, sans-serif; max-width: 1080px; margin: 0 auto; padding: 40px 10px;">
+                <h2 style="text-align: center; margin-bottom: 40px;">💎 Our Packages Plan</h2>
+
+                <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 20px; overflow-x: auto;">
+
+                    <!-- Basic Card -->
+                    <div
+                        style="flex: 0 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px;">
+                        <div style="background: #351F76; color: white; text-align: center; padding: 20px 0;">
+                            <h3 style="margin: 0;">Basic</h3>
+                            <p style="margin: 5px 0 0;">Half Course</p>
+                        </div>
+                        <div style="padding: 20px; color: black;">
+                            <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                                <li>✔ WITHOUT Theory Sessions</li>
+                                <li>✔ Money Back Guarantee</li>
+                                <li>✔ 100% Satisfaction</li>
+                            </ul>
+                            <a href="#"
+                                style="display: block; text-align: center; background-color: #351F76; color: white; padding: 12px 0; border-radius: 6px; text-decoration: none;">Book
+                                Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Premium Card -->
+                    <div
+                        style="flex: 0 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px;">
+                        <div style="background: #351F76; color: white; text-align: center; padding: 20px 0;">
+                            <h3 style="margin: 0;">Premium</h3>
+                            <p style="margin: 5px 0 0;">3 Months Full Course</p>
+                        </div>
+                        <div style="padding: 20px; color: black;">
+                            <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                                <li>✔ WITH Theory Sessions</li>
+                                <li>✔ Money Back Guarantee</li>
+                                <li>✔ 100% Satisfaction</li>
+                            </ul>
+                            <a href="#"
+                                style="display: block; text-align: center; background-color: #351F76; color: white; padding: 12px 0; border-radius: 6px; text-decoration: none;">Book
+                                Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Ultimate Card -->
+                    <div
+                        style="flex: 0 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px;">
+                        <div style="background: #351F76; color: white; text-align: center; padding: 20px 0;">
+                            <h3 style="margin: 0;">Ultimate</h3>
+                            <p style="margin: 5px 0 0;">6 Months Full Course</p>
+                        </div>
+                        <div style="padding: 20px; color: black;">
+                            <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                                <li>✔ WITH Theory Sessions</li>
+                                <li>✔ Money Back Guarantee</li>
+                                <li>✔ 100% Satisfaction</li>
+                            </ul>
+                            <a href="#"
+                                style="display: block; text-align: center; background-color: #351F76; color: white; padding: 12px 0; border-radius: 6px; text-decoration: none;">Book
+                                Now</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </section>
+
 
         <footer class="footer-one">
             <div class="footer-one__middle">
@@ -221,11 +245,19 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/theme.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBk25E4mNfVIEt3tNl3K1HwNZVruVoFBlA"></script>
-    <script src="js/gmaps.js"></script>
-    <script src="js/map-helper.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.video-popup').magnificPopup({
+                type: 'iframe'
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 </body>
 
 </html>
