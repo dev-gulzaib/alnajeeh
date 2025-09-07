@@ -2131,7 +2131,8 @@ hr.style-one {
   margin-top: 60px;
 }
 .about-two__about-page {
-  background-color: #3156a3;
+  background-color: #351F76;
+  /* background-color: #3156a3; */
 }
 .about-two__about-page .container {
   position: relative;
@@ -2470,7 +2471,8 @@ hr.style-one {
 
 .service-two__icon {
   font-size: 52px;
-  color: #0384ce;
+  color: #351F76;
+  /* color: #0384ce; */
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
