@@ -275,7 +275,7 @@ hr.style-one {
   height: 100%;
   z-index: 9999;
   background-color: #fff;
-  background-image: url(../img/Buffering\ Logo.gif);
+  background-image: url(../img/Zooming_Logo.gif);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain; /* 👈 ensures full image is visible without stretching */
@@ -1219,8 +1219,8 @@ body.menu-open {
   line-height: 51px;
 }
 .banner-wrapper .carousel-btn-block .carousel-btn:hover {
-  color: #ff6b35;
-  border-color: #ff6b35;
+  color: #351F76;
+  border-color: #351F76;
 }
 .banner-wrapper .carousel-btn-block .carousel-btn i {
   display: block;
