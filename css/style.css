@@ -612,7 +612,8 @@ hr.style-one {
 }
 .header-navigation ul.navigation-box > li > .submenu > li:hover > a {
   color: #fff;
-  background: #ff6b35;
+  /* background: #ff6b35; */
+  background: #960A6E;
 }
 .header-navigation ul.navigation-box > li:hover:before {
   -webkit-transform: scale(1, 1);
@@ -5723,7 +5724,7 @@ body.menu-open {
   margin: 0;
   font-size: 30px;
   font-family: "Source Sans Pro", sans-serif;
-  color: #0f4469;
+  color: #351F76;
   font-weight: bold;
   margin-bottom: 40px;
   margin-top: 40px;
@@ -5787,7 +5788,8 @@ body.menu-open {
   font-size: 24px;
   font-weight: bold;
   font-family: "Source Sans Pro", sans-serif;
-  color: #0f4469;
+  color: #351F76;
+  /* color: #0f4469; */
   margin-top: 20px;
   margin-bottom: 15px;
 }
@@ -5798,7 +5800,7 @@ body.menu-open {
   color: #5f666d;
 }
 .contact-one__info__text span {
-  color: #0f4469;
+  color: #351F76;
 }
 .contact-one__info__text + .contact-one__info__text {
   margin-top: 25px;
