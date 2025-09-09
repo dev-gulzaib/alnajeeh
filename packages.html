@@ -62,6 +62,7 @@
                         <button class="menu-toggler" data-target=".main-navigation">
                             <span class="fa fa-bars"></span>
                         </button>
+                        <div class="mobile-overlay"></div>
                     </div><!-- /.logo-box -->
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="main-navigation">
@@ -273,6 +274,92 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+        // Enhanced mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggler = document.querySelector('.menu-toggler');
+            const mainNavigation = document.querySelector('.main-navigation');
+            const mobileOverlay = document.querySelector('.mobile-overlay');
+            const body = document.body;
+
+            if (!menuToggler || !mainNavigation || !mobileOverlay) {
+                console.error('Mobile menu elements not found!');
+                return;
+            }
+
+            // Initialize with hamburger state
+            menuToggler.classList.add('hamburger-state');
+
+            function toggleMenu() {
+                const isOpen = mainNavigation.classList.contains('show');
+
+                if (isOpen) {
+                    // Close menu
+                    mainNavigation.classList.remove('show');
+                    mobileOverlay.classList.remove('show');
+                    menuToggler.classList.remove('active', 'close-state');
+                    menuToggler.classList.add('hamburger-state');
+                    body.classList.remove('menu-open');
+                } else {
+                    // Open menu
+                    mainNavigation.classList.add('show');
+                    mobileOverlay.classList.add('show');
+                    menuToggler.classList.remove('hamburger-state');
+                    menuToggler.classList.add('active', 'close-state');
+                    body.classList.add('menu-open');
+                }
+            }
+
+            // Menu toggler click event
+            menuToggler.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            // Overlay click event
+            mobileOverlay.addEventListener('click', function (e) {
+                e.preventDefault();
+                toggleMenu();
+            });
+
+            // Menu links click event
+            const menuLinks = document.querySelectorAll('.main-navigation a');
+            menuLinks.forEach((link) => {
+                link.addEventListener('click', function (e) {
+                    // Check if this link has a submenu
+                    const parentLi = link.parentElement;
+                    const submenu = parentLi.querySelector('.submenu');
+                    
+                    if (submenu && window.innerWidth <= 991) {
+                        e.preventDefault();
+                        submenu.classList.toggle('show');
+                        return false;
+                    }
+                    
+                    if (window.innerWidth <= 991 && mainNavigation.classList.contains('show')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Window resize handler
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 991) {
+                    mainNavigation.classList.remove('show');
+                    mobileOverlay.classList.remove('show');
+                    menuToggler.classList.remove('active', 'close-state');
+                    menuToggler.classList.add('hamburger-state');
+                    body.classList.remove('menu-open');
+                }
+            });
+
+            // Prevent menu panel clicks from closing menu
+            mainNavigation.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+3<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -364,7 +364,7 @@
                     </h4><!-- /.block-title__title -->
                 </div><!-- /.block-title -->
                 <div
-                    style="margin-top: -100px; display: flex; justify-content: center; align-items: center; height: 100vh;">
+                    style="margin-top: -100px; display: flex; justify-content: center; align-items: center; height: 85vh;">
                     <iframe width="1000" height="562" src="https://www.youtube.com/embed/9vDjwH1SB9c?si=_4MZIh7-knwSIKeo"
                         title="YouTube video" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -646,88 +646,38 @@
     <script src="js/wow.min.js"></script>
     <script src="js/theme.js"></script>
     <script>
+        // Enhanced mobile menu functionality
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('DOM loaded, initializing mobile menu...');
-
             const menuToggler = document.querySelector('.menu-toggler');
             const mainNavigation = document.querySelector('.main-navigation');
             const mobileOverlay = document.querySelector('.mobile-overlay');
-            const navigationBox = document.querySelector('.navigation-box');
             const body = document.body;
 
-            // Debug: Check if elements exist
-            console.log('Elements found:', {
-                menuToggler: !!menuToggler,
-                mainNavigation: !!mainNavigation,
-                mobileOverlay: !!mobileOverlay,
-                navigationBox: !!navigationBox
-            });
-
             if (!menuToggler || !mainNavigation || !mobileOverlay) {
-                console.error('Required elements not found!');
+                console.error('Mobile menu elements not found!');
                 return;
             }
 
-            function debugElementStyles(element, name) {
-                if (!element) return;
-
-                const styles = window.getComputedStyle(element);
-                console.log(`${name} styles:`, {
-                    display: styles.display,
-                    visibility: styles.visibility,
-                    opacity: styles.opacity,
-                    position: styles.position,
-                    right: styles.right,
-                    width: styles.width,
-                    height: styles.height,
-                    zIndex: styles.zIndex,
-                    backgroundColor: styles.backgroundColor
-                });
-            }
+            // Initialize with hamburger state
+            menuToggler.classList.add('hamburger-state');
 
             function toggleMenu() {
                 const isOpen = mainNavigation.classList.contains('show');
-
-                console.log('=== TOGGLE MENU ===');
-                console.log('Currently open:', isOpen);
 
                 if (isOpen) {
                     // Close menu
                     mainNavigation.classList.remove('show');
                     mobileOverlay.classList.remove('show');
-                    menuToggler.classList.remove('active');
+                    menuToggler.classList.remove('active', 'close-state');
+                    menuToggler.classList.add('hamburger-state');
                     body.classList.remove('menu-open');
-                    body.style.overflow = '';
-                    console.log('Menu closed');
                 } else {
                     // Open menu
                     mainNavigation.classList.add('show');
                     mobileOverlay.classList.add('show');
-                    menuToggler.classList.add('active');
+                    menuToggler.classList.remove('hamburger-state');
+                    menuToggler.classList.add('active', 'close-state');
                     body.classList.add('menu-open');
-                    body.style.overflow = 'hidden';
-                    console.log('Menu opened');
-
-                    // Debug styles after opening
-                    setTimeout(() => {
-                        console.log('=== POST-OPEN DEBUG ===');
-                        debugElementStyles(mainNavigation, 'Main Navigation');
-                        debugElementStyles(navigationBox, 'Navigation Box');
-                        debugElementStyles(mobileOverlay, 'Mobile Overlay');
-
-                        // Check if navigation items are visible
-                        const menuItems = document.querySelectorAll('.navigation-box > li');
-                        console.log('Menu items found:', menuItems.length);
-                        menuItems.forEach((item, index) => {
-                            const styles = window.getComputedStyle(item);
-                            console.log(`Menu item ${index}:`, {
-                                display: styles.display,
-                                visibility: styles.visibility,
-                                opacity: styles.opacity,
-                                height: styles.height
-                            });
-                        });
-                    }, 100);
                 }
             }
 
@@ -735,24 +685,29 @@
             menuToggler.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Menu button clicked');
                 toggleMenu();
             });
 
             // Overlay click event
             mobileOverlay.addEventListener('click', function (e) {
                 e.preventDefault();
-                console.log('Overlay clicked');
                 toggleMenu();
             });
 
             // Menu links click event
             const menuLinks = document.querySelectorAll('.main-navigation a');
-            console.log('Menu links found:', menuLinks.length);
-
-            menuLinks.forEach((link, index) => {
-                link.addEventListener('click', function () {
-                    console.log('Menu link clicked:', index, link.textContent);
+            menuLinks.forEach((link) => {
+                link.addEventListener('click', function (e) {
+                    // Check if this link has a submenu
+                    const parentLi = link.parentElement;
+                    const submenu = parentLi.querySelector('.submenu');
+                    
+                    if (submenu && window.innerWidth <= 991) {
+                        e.preventDefault();
+                        submenu.classList.toggle('show');
+                        return false;
+                    }
+                    
                     if (window.innerWidth <= 991 && mainNavigation.classList.contains('show')) {
                         toggleMenu();
                     }
@@ -762,12 +717,11 @@
             // Window resize handler
             window.addEventListener('resize', function () {
                 if (window.innerWidth > 991) {
-                    console.log('Resized to desktop, closing menu');
                     mainNavigation.classList.remove('show');
                     mobileOverlay.classList.remove('show');
-                    menuToggler.classList.remove('active');
+                    menuToggler.classList.remove('active', 'close-state');
+                    menuToggler.classList.add('hamburger-state');
                     body.classList.remove('menu-open');
-                    body.style.overflow = '';
                 }
             });
 
@@ -775,16 +729,6 @@
             mainNavigation.addEventListener('click', function (e) {
                 e.stopPropagation();
             });
-
-            // Initial debug
-            console.log('Window width:', window.innerWidth);
-            console.log('Mobile mode active:', window.innerWidth <= 991);
-
-            // Debug initial styles
-            debugElementStyles(mainNavigation, 'Initial Main Navigation');
-            debugElementStyles(navigationBox, 'Initial Navigation Box');
-
-            console.log('Mobile menu initialization complete');
         });
     </script>
 </body>
