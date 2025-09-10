@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wellness Reels - Aljaneeh</title>
+    <title>FAQ - Aljaneeh</title>
     <!-- <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
@@ -37,7 +37,9 @@
                     <li class="topbar-one__contact-item"><a href="mailto:help@example.com"><i
                                 class="material-icons">email</i>ams@alnajeeh.com</a></li>
                     <li class="topbar-one__contact-item"><a href="callto:+923360045132"><i
-                                class="material-icons">local_phone</i>+92 336 0045 132</a></li>
+                                class="material-icons">local_phone</i>+92 336 0045132</a></li>
+                    <li class="topbar-one__contact-item"><a href="callto:++923165843013"><i
+                                class="material-icons">local_phone</i>+92 316 5843013</a></li>
                 </ul><!-- /.topbar-one__contact -->
                 <div class="topbar-one__buttons">
                     <!-- <select class="selectpicker topbar-one__language">
@@ -78,10 +80,11 @@
                             <li class="current">
                                 <a style="cursor: pointer;">Spotlight</a>
                                 <ul class="submenu">
-                                    <li><a href="wellness-reels.html">Wellness Reels</a></li>
+                                    <li><a href="wellness-reels.html">Our Wellness Reels</a></li>
                                     <!-- <li><a href="faq.html">FAQs</a></li> -->
                                     <li><a href="team.html">Our Team</a></li>
-                                    <li><a href="#">Satisfied Patients</a></li>
+                                    <li><a href="satisfied-patients.html">Our Satisfied Patients</a></li>
+                                    <li><a href="career-opportunties.html">Career Opportunties</a></li>
                                 </ul><!-- /.submenu -->
                             </li>
                             <li>
@@ -92,8 +95,8 @@
                                 <a href="packages.html">Packages</a>
                             </li>
 
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li class="current"><a href="#">FAQs</a></li>
+                            <li><a href="contact.html">Contact us</a></li>
+                            <li class="current"><a href="#">FAQ</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
 
@@ -277,7 +280,59 @@
                 </div>
 
             </div><!-- /.container -->
+
         </section><!-- /.faq-accrodion sec-pad -->
+
+        <!-- COntact Us -->
+        <section style="margin-top: -150px;" class="faq-accrodion sec-pad">
+            <div class="container">
+                <div class="container" style="max-width: 900px; margin: 0 auto;">
+                    <div class="row justify-content-between no-gutters">
+                        <div>
+                            <h3 class="contact-one__title" style="margin-bottom: 20px;">Send your query</h3>
+
+                            <form action="inc/sendemail.php" class="contact-one__form contact-form-validated"
+                                style="display: flex; flex-wrap: wrap; gap: 20px;" onsubmit="return checkWordLimit()">
+
+                                <input type="text" name="name" placeholder="Full Name" required
+                                    style="flex: 1 1 45%; padding: 10px;">
+                                <input type="text" name="age" placeholder="Age" required
+                                    style="flex: 1 1 45%; padding: 10px;">
+                                <input type="text" name="gender" placeholder="Gender" required
+                                    style="flex: 1 1 45%; padding: 10px;">
+                                <input type="text" name="phone" placeholder="Phone" required
+                                    style="flex: 1 1 45%; padding: 10px;">
+                                <!-- <input type="text" name="country" placeholder="Country" required
+                                    style="flex: 1 1 45%; padding: 10px;">
+                                <input type="text" name="city" placeholder="City" required
+                                    style="flex: 1 1 45%; padding: 10px;"> -->
+                                <select name="country" id="country" required style="flex: 1 1 45%; padding: 10px;">
+                                    <option value="">Select Country</option>
+                                </select>
+
+                                <select name="city" id="city" required style="flex: 1 1 45%; padding: 10px;">
+                                    <option value="">Select City</option>
+                                </select>
+                                <input type="email" name="email" placeholder="Email Address" required
+                                    style="flex: 1 1 100%; padding: 10px;">
+
+                                <textarea name="message" placeholder="Your Message (Max 2000 words)" required
+                                    oninput="updateWordCount(this)"
+                                    style="flex: 1 1 100%; padding: 10px; min-height: 120px;"></textarea>
+                                <div style="flex: 1 1 100%; font-size: 14px; color: #555;">
+                                    <span id="wordCount">0</span>/2000 words
+                                </div>
+
+                                <button type="submit" class="thm-btn contact-one__btn"
+                                    style="padding: 12px 30px; background-color: #351F76; color: white; border: none; cursor: pointer;">
+                                    Send
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.container -->
+        </section>
 
         <footer class="footer-one">
             <div class="footer-one__middle">
@@ -444,6 +499,63 @@
                 e.stopPropagation();
             });
         });
+    </script>
+
+    <!-- Form Description Limit -->
+    <script>
+        function updateWordCount(textarea) {
+            const words = textarea.value.trim().split(/\s+/);
+            const wordCount = textarea.value.trim() === "" ? 0 : words.length;
+            document.getElementById("wordCount").innerText = wordCount;
+
+            // Optional: prevent typing beyond 2000 words
+            if (wordCount > 2000) {
+                alert("You have reached the 2000-word limit.");
+                // Trim to 2000 words
+                textarea.value = words.slice(0, 2000).join(" ");
+                document.getElementById("wordCount").innerText = 2000;
+            }
+        }
+
+        function checkWordLimit() {
+            const textarea = document.querySelector('textarea[name="message"]');
+            const words = textarea.value.trim().split(/\s+/);
+            const wordCount = textarea.value.trim() === "" ? 0 : words.length;
+            if (wordCount > 2000) {
+                alert("Your message exceeds the 2000-word limit.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script type="module">
+        import countriesCities from 'https://cdn.skypack.dev/all-countries-and-cities-json';
+
+        const countrySelect = document.getElementById('country');
+        const citySelect = document.getElementById('city');
+
+        // Populate country dropdown
+        Object.keys(countriesCities).sort().forEach(country => {
+            const opt = document.createElement('option');
+            opt.value = country;
+            opt.textContent = country;
+            countrySelect.appendChild(opt);
+        });
+
+        // Update cities when a country is selected
+        countrySelect.addEventListener('change', () => {
+            const selected = countrySelect.value;
+            citySelect.innerHTML = '<option value="">Select City</option>';
+            if (selected && countriesCities[selected]) {
+                countriesCities[selected].sort().forEach(city => {
+                    const opt = document.createElement('option');
+                    opt.value = city;
+                    opt.textContent = city;
+                    citySelect.appendChild(opt);
+                });
+            }
+        });
+
     </script>
 </body>
 

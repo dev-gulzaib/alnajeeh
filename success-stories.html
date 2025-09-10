@@ -38,7 +38,9 @@
                     <li class="topbar-one__contact-item"><a href="mailto:help@example.com"><i
                                 class="material-icons">email</i>ams@alnajeeh.com</a></li>
                     <li class="topbar-one__contact-item"><a href="callto:+923360045132"><i
-                                class="material-icons">local_phone</i>+92 336 0045 132</a></li>
+                                class="material-icons">local_phone</i>+92 336 0045132</a></li>
+                    <li class="topbar-one__contact-item"><a href="callto:++923165843013"><i
+                                class="material-icons">local_phone</i>+92 316 5843013</a></li>
                 </ul><!-- /.topbar-one__contact -->
                 <div class="topbar-one__buttons">
                     <!-- <select class="selectpicker topbar-one__language">
@@ -79,10 +81,12 @@
                             <li>
                                 <a style="cursor: pointer;">Spotlight</a>
                                 <ul class="submenu">
-                                    <li><a href="wellness-reels.html">Wellness Reels</a></li>
+                                    <li><a href="wellness-reels.html">Our Wellness Reels</a></li>
                                     <!-- <li><a href="faq.html">FAQs</a></li> -->
                                     <li><a href="team.html">Our Team</a></li>
-                                    <li><a href="#">Satisfied Patients</a></li>
+                                    <li><a href="satisfied-patients.html">Our Satisfied Patients</a></li>
+                                    <li><a href="career-opportunties.html">Career Opportunties</a></li>
+
                                 </ul><!-- /.submenu -->
                             </li>
                             <li class="current">
@@ -93,8 +97,8 @@
                                 <a href="packages.html">Packages</a>
                             </li>
 
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="contact.html">Contact us</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
 
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -172,7 +176,8 @@
                                     style="display: inline-flex; align-items: center; white-space: nowrap; gap: 6px; font-size: 14px; text-decoration: none; color: #960A6E;">
                                     <i class="fa fa-play"
                                         style="font-size: 14px; margin-left: 22px; margin-top: 5px;"></i>
-                                    <span style="margin-left: 20px; color:white;">Click to watch video feedback</span>
+                                    <span style="margin-left: 20px; color:white;">Click here to watch video
+                                        feedback</span>
                                 </a>
                             </div><!-- /.testimonials-three__content -->
                         </div><!-- /.testimonials-three__single -->
@@ -205,7 +210,7 @@
                                 <a href="https://www.youtube.com/watch?v=sRBmq8WbRdM" class="video-popup"
                                     style="display: inline-flex; align-items: center; white-space: nowrap; gap: 6px; font-size: 14px; text-decoration: none; color: #960A6E;">
                                     <i class="fa fa-play" style="font-size: 14px;"></i>
-                                    <span><b>Click to watch video feedback</b></span>
+                                    <span><b>Click here to watch video feedback</b></span>
                                 </a>
                             </div>
                         </div>
@@ -236,7 +241,7 @@
                                 <a href="https://www.youtube.com/watch?v=TUTzf9RxG5c" class="video-popup"
                                     style="display: inline-flex; align-items: center; white-space: nowrap; gap: 6px; font-size: 14px; text-decoration: none; color: #960A6E;">
                                     <i class="fa fa-play" style="font-size: 14px;"></i>
-                                    <span><b>Click to watch video feedback</b></span>
+                                    <span><b>Click here to watch video feedback</b></span>
                                 </a>
                             </div>
                         </div>
@@ -268,7 +273,7 @@
                                 <a href="https://www.youtube.com/watch?v=y_VSmVTNt9I" class="video-popup"
                                     style="display: inline-flex; align-items: center; white-space: nowrap; gap: 6px; font-size: 14px; text-decoration: none; color: #960A6E;">
                                     <i class="fa fa-play" style="font-size: 14px;"></i>
-                                    <span><b>Click to watch video feedback</b></span>
+                                    <span><b>Click here to watch video feedback</b></span>
                                 </a>
                             </div>
                         </div>
@@ -300,7 +305,7 @@
                                 <a href="https://www.youtube.com/watch?v=K47WDNyUZSU" class="video-popup"
                                     style="display: inline-flex; align-items: center; white-space: nowrap; gap: 6px; font-size: 14px; text-decoration: none; color: #960A6E;">
                                     <i class="fa fa-play" style="font-size: 14px;"></i>
-                                    <span><b>Click to watch video feedback</b></span>
+                                    <span><b>Click here to watch video feedback</b></span>
                                 </a>
                             </div>
                         </div>
@@ -490,13 +495,13 @@
                     // Check if this link has a submenu
                     const parentLi = link.parentElement;
                     const submenu = parentLi.querySelector('.submenu');
-                    
+
                     if (submenu && window.innerWidth <= 991) {
                         e.preventDefault();
                         submenu.classList.toggle('show');
                         return false;
                     }
-                    
+
                     if (window.innerWidth <= 991 && mainNavigation.classList.contains('show')) {
                         toggleMenu();
                     }
