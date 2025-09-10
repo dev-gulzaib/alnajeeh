@@ -188,8 +188,8 @@ hr.style-one {
 }
 
 .sec-pad {
-  padding-top: 120px;
-  padding-bottom: 130px;
+  padding-top: 80px;
+  padding-bottom: 66px;
 }
 .sec-pad-with-content-margin-20 {
   padding-bottom: 110px;
@@ -7565,7 +7565,7 @@ body.menu-open {
 }
 .faq-accrodion .accrodion-grp .accrodion.active .accrodion-title h4 {
   text-shadow: 1px 0 0 rgba(15, 68, 105, 0.8);
-  color: #0f4469;
+  color: #351F76;
 }
 .faq-accrodion .accrodion-grp .accrodion.active .accrodion-title h4:before {
   content: "remove";
