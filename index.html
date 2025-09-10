@@ -1,4 +1,4 @@
-3<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -110,19 +110,6 @@
                         <!-- <img src="images/bg-slider/" alt="Awesome Image" class="banner-one__person" /> -->
                         <div class="row no-gutters">
                             <div class="col-lg-6">
-                                <!-- Blue background wrapper with inline CSS -->
-                                <!-- <div style="background-color: #351F76; padding: 30px; border-radius: 5px;">
-                                    <h3 class="banner-one__title banner-one__light-color">Hurry Up!<br>
-                                    </h3>
-                                    <h4 class="banner-one__text banner-one__light-color"><b>REACH OUT TODAY AND<br>
-                                            START YOUR
-                                            JOURNEY<br> TOWARD PERFECT HEALTH</b>
-                                    </h4>
-                                    <h4
-                                        style="background-color: red; display: inline; padding: 0; margin: 0; color: white;">
-                                        <b>LIMITED SLOTS AVAILABLE - DON'T MISS OUT!</b>
-                                    </h4>
-                                </div> -->
 
                             </div><!-- /.col-lg-6 -->
                         </div><!-- /.row -->
@@ -134,19 +121,7 @@
                         <!-- <img src="images/bg-slider/" alt="Awesome Image" class="banner-one__person" /> -->
                         <div class="row no-gutters">
                             <div class="col-lg-6">
-                                <!-- Blue background wrapper with inline CSS -->
-                                <!-- <div style="background-color: #351F76; padding: 30px; border-radius: 5px;">
-                                    <h3 class="banner-one__title banner-one__light-color">Hurry Up!<br>
-                                    </h3>
-                                    <h4 class="banner-one__text banner-one__light-color"><b>REACH OUT TODAY AND<br>
-                                            START YOUR
-                                            JOURNEY<br> TOWARD PERFECT HEALTH</b>
-                                    </h4>
-                                    <h4
-                                        style="background-color: red; display: inline; padding: 0; margin: 0; color: white;">
-                                        <b>LIMITED SLOTS AVAILABLE - DON'T MISS OUT!</b>
-                                    </h4>
-                                </div> -->
+                               
                             </div><!-- /.col-lg-6 -->
                         </div><!-- /.row -->
                     </div><!-- /.container -->
@@ -363,14 +338,15 @@
                         Quranic Scholar & Medical Scholar
                     </h4><!-- /.block-title__title -->
                 </div><!-- /.block-title -->
-                <div
-                    style="margin-top: -100px; display: flex; justify-content: center; align-items: center; height: 85vh;">
-                    <iframe width="1000" height="562" src="https://www.youtube.com/embed/9vDjwH1SB9c?si=_4MZIh7-knwSIKeo"
-                        title="YouTube video" frameborder="0"
+                <!-- Responsive YouTube Embed -->
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 20px;">
+                    <iframe src="https://www.youtube.com/embed/9vDjwH1SB9c?si=_4MZIh7-knwSIKeo" title="YouTube video"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
+                        allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                     </iframe>
                 </div>
+
 
             </div><!-- /.container -->
         </section><!-- /.service-one -->
@@ -476,7 +452,7 @@
         </section><!-- /.feature-one -->
         <section class="feature-two">
             <div class="container">
-                <img src="img/team/AB-02.jpg" style="width: 450px;" alt="Awesome Image"
+                <img src="img/team/AB-02.jpg" style="width: 320px; margin-right: 130px;" alt="Awesome Image"
                     class="feature-two__person wow fadeInUp" />
                 <div class="row">
                     <div class="col-lg-7">
@@ -701,13 +677,13 @@
                     // Check if this link has a submenu
                     const parentLi = link.parentElement;
                     const submenu = parentLi.querySelector('.submenu');
-                    
+
                     if (submenu && window.innerWidth <= 991) {
                         e.preventDefault();
                         submenu.classList.toggle('show');
                         return false;
                     }
-                    
+
                     if (window.innerWidth <= 991 && mainNavigation.classList.contains('show')) {
                         toggleMenu();
                     }
