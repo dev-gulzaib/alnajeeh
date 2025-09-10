@@ -139,14 +139,17 @@
                                 of Saudi Arabia.
                             </p><!-- /.contact-one__info__text -->
                             <p class="contact-one__info__text"><span><i class="fas fa-phone-alt"></i> Call us:</span>
-                                <br> +966 57 862 6934 </p>
+                                <br> +966 57 862 6934
+                            </p>
 
                             <p class="contact-one__info__text"><span><i class="fab fa-whatsapp"></i> WhatsApp:</span>
-                                <br> +92 336 0045 132 <br>+92 319 432 4820</p>
+                                <br> +92 336 0045 132 <br>+92 319 432 4820
+                            </p>
                             <!-- /.contact-one__info__text -->
                             <p class="contact-one__info__text"><span><i class="fas fa-envelope"></i> Email us:</span>
                                 <br> ams@alnaajeh.com <br>
-                                query@alnaajeh.com</p>
+                                query@alnaajeh.com
+                            </p>
                             <!-- /.contact-one__info__text -->
                             <div class="contact-one__info__social">
                                 <a href="#"><i class="fa fa-facebook-f"></i></a>
@@ -158,15 +161,15 @@
                 </div><!-- /.row justify-content-end -->
             </div><!-- /.container -->
         </section><!-- /.contact-one -->
-        
-        <div class="contact-page-map-wrapper">
-            <div class="google-map" id="contact-google-map" data-map-lat="21.489407" data-map-lng="39.246949"
-                data-icon-path="images/resources/map-pin-1-1.png" data-map-title="Jeddah, Saudi Arabia"
-                data-map-zoom="15" data-markers='{
-            "marker-1": [21.489407, 39.246949, "<h4>Jeddah Office</h4><p>Office # 32, Street Tadamun Al Arabi, Jeddah, KSA</p>"]
-        }'>
-            </div>
+
+        <div class="google-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3711.132942094562!2d39.19514847527073!3d21.54165648023916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDMyJzMwLjAiTiAzOcKwMTEnNTEuOCJF!5e0!3m2!1sen!2s!4v1757497546198!5m2!1sen!2s"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
+
 
         <footer class="footer-one">
             <div class="footer-one__middle">
@@ -307,13 +310,13 @@
                     // Check if this link has a submenu
                     const parentLi = link.parentElement;
                     const submenu = parentLi.querySelector('.submenu');
-                    
+
                     if (submenu && window.innerWidth <= 991) {
                         e.preventDefault();
                         submenu.classList.toggle('show');
                         return false;
                     }
-                    
+
                     if (window.innerWidth <= 991 && mainNavigation.classList.contains('show')) {
                         toggleMenu();
                     }
