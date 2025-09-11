@@ -520,7 +520,7 @@
         function checkWordLimit() {
             const textarea = document.querySelector('textarea[name="message"]');
             const words = textarea.value.trim().split(/\s+/);
-            const wordCount = textarea.value.trim() === "" ? 0 : words.length;
+            const wordCount = textarea.value.trim() === "" ? 0 : words.length; 3
             if (wordCount > 2000) {
                 alert("Your message exceeds the 2000-word limit.");
                 return false;
@@ -528,35 +528,63 @@
             return true;
         }
     </script>
-    <script type="module">
-        import countriesCities from 'https://cdn.skypack.dev/all-countries-and-cities-json';
+    <!-- Country & City Dropdown -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const countrySelect = document.getElementById("country");
+            const citySelect = document.getElementById("city");
 
-        const countrySelect = document.getElementById('country');
-        const citySelect = document.getElementById('city');
+            // Load countries list from API
+            fetch("https://countriesnow.space/api/v0.1/countries/positions")
+                .then(res => res.json())
+                .then(data => {
+                    const countries = data.data;
+                    countries.forEach(country => {
+                        const option = document.createElement("option");
+                        option.value = country.name;
+                        option.textContent = country.name;
+                        countrySelect.appendChild(option);
+                    });
+                })
+                .catch(err => console.error("Error loading countries:", err));
 
-        // Populate country dropdown
-        Object.keys(countriesCities).sort().forEach(country => {
-            const opt = document.createElement('option');
-            opt.value = country;
-            opt.textContent = country;
-            countrySelect.appendChild(opt);
-        });
+            // When country changes, fetch cities for that country
+            countrySelect.addEventListener("change", () => {
+                const selectedCountry = countrySelect.value;
+                citySelect.innerHTML = '<option value="">Loading cities...</option>';
 
-        // Update cities when a country is selected
-        countrySelect.addEventListener('change', () => {
-            const selected = countrySelect.value;
-            citySelect.innerHTML = '<option value="">Select City</option>';
-            if (selected && countriesCities[selected]) {
-                countriesCities[selected].sort().forEach(city => {
-                    const opt = document.createElement('option');
-                    opt.value = city;
-                    opt.textContent = city;
-                    citySelect.appendChild(opt);
-                });
-            }
+                if (!selectedCountry) {
+                    citySelect.innerHTML = '<option value="">Select City</option>';
+                    return;
+                }
+
+                fetch("https://countriesnow.space/api/v0.1/countries/cities", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ country: selectedCountry }),
+                })
+                    .then(res => res.json())
+                    .then(result => {
+                        citySelect.innerHTML = '<option value="">Select City</option>';
+                        if (result.data && result.data.length) {
+                            result.data.forEach(city => {
+                                const option = document.createElement("option");
+                                option.value = city;
+                                option.textContent = city;
+                                citySelect.appendChild(option);
+                            });
+                        } else {
+                            citySelect.innerHTML = '<option value="">No cities found</option>';
+                        }
+                    })
+                    .catch(() => {
+                        citySelect.innerHTML = '<option value="">Error loading cities</option>';
+                    });
+            });
         });
 
     </script>
+
 </body>
 
 </html>
