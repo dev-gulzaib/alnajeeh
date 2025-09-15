@@ -5800,9 +5800,6 @@ body.menu-open {
   }
 }
 
-
-
-
 /* Safety: prevent any parent from forcing clipping */
 .inner-banner,
 .inner-banner * {
