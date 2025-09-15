@@ -5725,7 +5725,7 @@ body.menu-open {
 /*
 * 13. inner-banner style
 */
-.inner-banner {
+/* .inner-banner {
   position: relative;
   background-image: url(images/bg-slider/slider-2.jpeg);
   background-position: center center;
@@ -5745,12 +5745,71 @@ body.menu-open {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 0;
+} */
+ /* Base stays mostly as you had it */
+.inner-banner {
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  min-height: 550px;
+  padding: 150px 0;
+  display: grid;
+  place-items: center;
+  overflow: visible;               /* <-- make sure children aren’t clipped */
 }
 
-.inner-banner .container {
-  position: relative;
-  z-index: 2; /* 👈 Keeps your text above the dark overlay */
+.inner-banner::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 0;
 }
+
+.inner-banner .container { position: relative; z-index: 2; }
+
+/* If your header is fixed, don’t let it overlap the banner */
+.header--fixed + .inner-banner {
+  margin-top: var(--header-height, 64px);      /* adjust to your header height */
+}
+
+/* --- MOBILE FIX --- */
+@media (max-width: 768px) {
+  .inner-banner {
+    background-size: cover !important;     /* thoda crop allow karo */
+    background-repeat: no-repeat;
+    background-position: center top;       /* important area dikhe */
+
+    min-height: 300px;                     /* kam height taake zyada cut na ho */
+    height: auto;
+    padding: 60px 16px 30px;               /* text ko safe space do */
+    overflow: hidden;
+  }
+
+  .inner-banner::before {
+    background: transparent !important;    /* dark overlay remove */
+  }
+
+  .inner-banner .container {
+    position: relative;
+    z-index: 2;
+    padding-inline: 16px;
+  }
+}
+
+
+
+
+/* Safety: prevent any parent from forcing clipping */
+.inner-banner,
+.inner-banner * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 
 
 .inner-banner__title {
