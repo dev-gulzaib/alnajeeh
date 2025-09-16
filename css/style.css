@@ -5755,7 +5755,7 @@ body.menu-open {
   text-align: center;
   color: #fff;
   z-index: 1;
-  min-height: 550px;
+  min-height: 650px;
   padding: 150px 0;
   display: grid;
   place-items: center;
