@@ -5783,7 +5783,7 @@ body.menu-open {
     background-repeat: no-repeat;
     background-position: center top;       /* important area dikhe */
 
-    min-height: 300px;                     /* kam height taake zyada cut na ho */
+    min-height: 210px;                     /* kam height taake zyada cut na ho */
     height: auto;
     padding: 60px 16px 30px;               /* text ko safe space do */
     overflow: hidden;
