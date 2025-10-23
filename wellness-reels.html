@@ -25,6 +25,76 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/hover.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <style>
+        /* Page-specific visual enhancements */
+        .inner-banner {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 260px;
+        }
+        .inner-banner::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(53, 31, 118, 0.28) 0%, rgba(0, 0, 0, 0.35) 90%);
+            pointer-events: none;
+        }
+
+        .service-two__single {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform .4s ease, box-shadow .4s ease;
+        }
+        .service-two__single::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.55));
+            opacity: 0;
+            transition: opacity .35s ease;
+            pointer-events: none;
+        }
+        .service-two__single:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+        }
+        .service-two__single:hover::before {
+            opacity: 1;
+        }
+        .service-two__single .clainc-icon-play-button {
+            position: relative;
+            text-shadow: 0 6px 12px rgba(0, 0, 0, .35);
+        }
+        .service-two__single .clainc-icon-play-button::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 64px;
+            height: 64px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, .55);
+            animation: pulse-ring 1.8s ease-out infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, .55); }
+            70% { box-shadow: 0 0 0 22px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        .service-two__title {
+            transition: transform .35s ease, opacity .35s ease;
+        }
+        .service-two__single:hover .service-two__title {
+            transform: translateY(-4px);
+            opacity: .98;
+        }
+    </style>
 
 </head>
 
@@ -925,6 +995,7 @@
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/theme.js"></script>
     <script>
         // Enhanced mobile menu functionality
@@ -1010,6 +1081,51 @@
             mainNavigation.addEventListener('click', function (e) {
                 e.stopPropagation();
             });
+        });
+    </script>
+    <script>
+        // Page-specific animations and lightbox
+        document.addEventListener('DOMContentLoaded', function () {
+            // Staggered WOW animations for cards
+            try {
+                var wraps = document.querySelectorAll('.service-two .service-two__wrap');
+                wraps.forEach(function (el, idx) {
+                    el.classList.add('wow', 'fadeInUp');
+                    el.setAttribute('data-wow-duration', '0.8s');
+                    el.setAttribute('data-wow-delay', ((idx % 6) * 0.06).toFixed(2) + 's');
+                });
+                if (typeof WOW === 'function') {
+                    new WOW({ offset: 80, mobile: false }).init();
+                }
+            } catch (e) { /* noop */ }
+
+            // Magnific Popup for YouTube + Shorts links
+            if (window.jQuery && typeof jQuery.fn.magnificPopup === 'function') {
+                jQuery('.service-two .video-popup').magnificPopup({
+                    type: 'iframe',
+                    preloader: true,
+                    fixedContentPos: false,
+                    removalDelay: 200,
+                    mainClass: 'mfp-fade',
+                    iframe: {
+                        patterns: {
+                            youtube: {
+                                index: 'youtube.com',
+                                id: function (url) {
+                                    try {
+                                        var m;
+                                        if ((m = url.match(/[?&]v=([^?&]+)/))) return m[1];
+                                        if ((m = url.match(/\/shorts\/([^?&\/]+)/))) return m[1];
+                                        if ((m = url.match(/\/embed\/([^?&\/]+)/))) return m[1];
+                                        return null;
+                                    } catch (e) { return null; }
+                                },
+                                src: 'https://www.youtube.com/embed/%id%?autoplay=1&rel=0&showinfo=0'
+                            }
+                        }
+                    }
+                });
+            }
         });
     </script>
 </body>
